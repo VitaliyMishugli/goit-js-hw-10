@@ -18,3 +18,13 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+
+.country-list{
+  height: 50px;
+  border: 1px solid blue;
+}
+
+.country-info{
+  height: 50px;
+    border: 1px solid red;
+}
