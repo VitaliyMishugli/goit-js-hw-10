@@ -1,14 +1,17 @@
 
-export function fetchCountries(name) {
-  return fetch(
-    `https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,flags,languages`
-  )
+let RES_LEN = 0;
+function fetchCountries(name) {
+  return fetch(`https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,flags,languages`)
     .then(r => {
       return r.json();
     })
-    .then(r => console.log(r));
+    .then(r => {
+      RES_LEN = r.length;
+      return {r, RES_LEN};
+    })
 }
 
-// https://restcountries.com/v2/{service}?fields={field},{field},{field}
-// https://restcountries.com/v2/all?fields=name,capital,currencies
-// 
+export { fetchCountries, RES_LEN };
+
+
+

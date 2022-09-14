@@ -19,12 +19,21 @@ body {
   margin-bottom: 16px;
 }
 
+ul{
+  list-style: none;
+}
+
+.list-h{
+  display: inline;
+}
+
 .country-list{
-  height: 50px;
+  height: auto;
   border: 1px solid blue;
 }
 
+
 .country-info{
-  height: 50px;
+  height: auto;
     border: 1px solid red;
 }
