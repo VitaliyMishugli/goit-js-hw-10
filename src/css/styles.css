@@ -23,7 +23,7 @@ ul{
   list-style: none;
 }
 
-.list-h{
+.list-h, h1, h3, p{
   display: inline;
 }
 

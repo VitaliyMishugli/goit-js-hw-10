@@ -6,7 +6,6 @@ import Notiflix from 'notiflix';
 
 
 const DEBOUNCE_DELAY = 300;
-// fetchCountries('spain');
 
 const refs = {
   searchInput: document.querySelector('#search-box'),
@@ -22,13 +21,10 @@ refs.searchInput.addEventListener(
 function searchCountries(e) {
   e.preventDefault();
   let inputValue = refs.searchInput.value.trim();
-  // console.log(inputValue);
   if (inputValue) {
     fetchCountries(inputValue)
       .then(res => {
-      // console.log(r.RES_LEN);
         if (res.RES_LEN > 10) {
-         
           Notiflix.Notify.info(
            `✅ Too many matches found. Please enter a more specific name.`
           );
@@ -36,41 +32,46 @@ function searchCountries(e) {
         }
         else if (res.RES_LEN <= 10 && res.RES_LEN >=2 ) {
           countriesListRender(res.r);
-          // console.log(r);
-          // let countries = res.r;
-          // const markUp = countries.map(country => {
-          //   // console.log(country.name.official, country.capital[0], country.population, country.flags.svg, country.languages);
-          //   // console.log(country.name.official, country.flags.svg);
-          //   return `<li><img src="${country.flags.svg}" width="50"/><h3 class="list-h">${country.name.official}</h3></li>`;
-          // }).join('');
-          // refs.countryList.innerHTML = markUp;
         }
-        else {
+        else if (res.RES_LEN === 1) {
           countryRender(res.r);
         }
       })
+      .catch(err => {
+        
+      })
   }
   else {
+    refs.countryList.innerHTML = '';
     Notiflix.Notify.info(
       `✅ Введіть кілька символів для пошуку країни.`
     );
   }
 }
 
-
-
 function countryRender(data) {
-  console.log(data);
-  
+  // refs.countryList.innerHTML = '';
+  // refs.countryInfo.innerHTML = '';
+  let info = data[0];
+  console.log(info);
+  const languages = info.languages;
+  let langStr = ``;
+
+  for (key in languages){
+    langStr += `${languages[key]}, `;
+  }
+
+  let string = `<div><img src="${info.flags.svg}" width="50"/><h1>${info.name.official}</h1></div><div><h3>Capital: </h3><p>${info.capital[0]}</p></div><div><h3>Population: </h3><p>${info.population}</p></div><div><h3>Languages: </h3><p>${langStr}</p></div>`;
+  refs.countryInfo.innerHTML = string;
 }
 
 function countriesListRender(data) {
+  // refs.countryList.innerHTML = '';
+  // refs.countryInfo.innerHTML = '';
   console.log(data);
    let countries = data;
    const markUp = countries
      .map(country => {
-       // console.log(country.name.official, country.capital[0], country.population, country.flags.svg, country.languages);
-       // console.log(country.name.official, country.flags.svg);
        return `<li><img src="${country.flags.svg}" width="50"/><h3 class="list-h">${country.name.official}</h3></li>`;
      })
      .join('');
