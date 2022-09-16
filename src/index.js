@@ -50,8 +50,8 @@ function searchCountries(e) {
 }
 
 function countryRender(data) {
-  // refs.countryList.innerHTML = '';
-  // refs.countryInfo.innerHTML = '';
+  refs.countryList.innerHTML = '';
+  refs.countryInfo.innerHTML = '';
   let info = data[0];
   console.log(info);
   const languages = info.languages;
@@ -66,8 +66,8 @@ function countryRender(data) {
 }
 
 function countriesListRender(data) {
-  // refs.countryList.innerHTML = '';
-  // refs.countryInfo.innerHTML = '';
+  refs.countryList.innerHTML = '';
+  refs.countryInfo.innerHTML = '';
   console.log(data);
    let countries = data;
    const markUp = countries
