@@ -24,11 +24,10 @@ function searchCountries(e) {
     fetchCountries(inputValue)
       .then(res => {
         let resLen = res.length;
-        // console.log(res);
 
         if (resLen > 10) {
           Notiflix.Notify.info(
-            `✅ Too many matches found. Please enter a more specific name.`
+            `Too many matches found. Please enter a more specific name.`
           );
           refs.countryList.innerHTML = '';
         } else if (resLen <= 10 && resLen >= 2) {
@@ -50,7 +49,7 @@ function searchCountries(e) {
     refs.countryList.innerHTML = '';
      refs.countryInfo.innerHTML = '';
     Notiflix.Notify.info(
-      `✅ Введіть кілька символів для пошуку країни.`
+      `Введіть кілька символів для пошуку країни.`
     );
   }
 }

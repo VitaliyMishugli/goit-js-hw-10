@@ -1,5 +1,4 @@
 
-// let RES_LEN = 0;
 function fetchCountries(name) {
   return fetch(`https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,flags,languages`)
     .then(r => {
@@ -8,10 +7,6 @@ function fetchCountries(name) {
       }
       return r.json();
     })
-    // .catch(err => {
-    //   // console.log(err);
-    //   return err;
-    // })
 }
 
 export { fetchCountries};
