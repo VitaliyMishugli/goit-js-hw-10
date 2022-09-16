@@ -12,7 +12,8 @@ function fetchCountries(name) {
       RES_LEN = r.length;
       return {r, RES_LEN};
     }).catch(err => {
-      
+      console.log(err);
+      return err;
     })
 }
 

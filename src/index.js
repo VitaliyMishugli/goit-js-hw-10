@@ -26,23 +26,25 @@ function searchCountries(e) {
       .then(res => {
         if (res.RES_LEN > 10) {
           Notiflix.Notify.info(
-           `✅ Too many matches found. Please enter a more specific name.`
+            `✅ Too many matches found. Please enter a more specific name.`
           );
           refs.countryList.innerHTML = '';
-        }
-        else if (res.RES_LEN <= 10 && res.RES_LEN >=2 ) {
+        } else if (res.RES_LEN <= 10 && res.RES_LEN >= 2) {
           countriesListRender(res.r);
-        }
-        else if (res.RES_LEN === 1) {
+        } else if (res.RES_LEN === 1) {
           countryRender(res.r);
+        } else if (res.RES_LEN === 0) {
+          refs.countryList.innerHTML = '';
+          refs.countryInfo.innerHTML = '';
         }
       })
       .catch(err => {
-        
+        Notiflix.Notify.error(`✅Oops, there is no country with that name.`);
       })
   }
   else {
     refs.countryList.innerHTML = '';
+     refs.countryInfo.innerHTML = '';
     Notiflix.Notify.info(
       `✅ Введіть кілька символів для пошуку країни.`
     );
