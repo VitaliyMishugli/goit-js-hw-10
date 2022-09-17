@@ -33,8 +33,8 @@ function searchCountries(e) {
         } else if (resLen <= 10 && resLen >= 2) {
           countriesListRender(res);
         } else if (resLen === 1) {
-          console.log(resLen);
-          console.log(res);
+          // console.log(resLen);
+          // console.log(res);
           countryRender(res);
         } else if (resLen === 0) {
           refs.countryList.innerHTML = '';
@@ -60,7 +60,7 @@ function countryRender(data) {
   refs.countryList.innerHTML = '';
   refs.countryInfo.innerHTML = '';
   let info = data[0];
-  console.log(info);
+  // console.log(info);
   const languages = info.languages;
   let langStr = ``;
 
@@ -69,7 +69,14 @@ function countryRender(data) {
   }
 
   let string = `<div><img src="${info.flags.svg}" width="50"/><h1>${info.name.official}</h1></div><div><h3>Capital: </h3><p>${info.capital[0]}</p></div><div><h3>Population: </h3><p>${info.population}</p></div><div><h3>Languages: </h3><p>${langStr}</p></div>`;
+
+  console.log(string);
+
   refs.countryInfo.innerHTML = string;
+
+  console.log(string);
+
+  console.log("Розмітка зроблена");
 }
 
 function countriesListRender(data) {
