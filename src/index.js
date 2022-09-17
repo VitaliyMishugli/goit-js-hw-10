@@ -35,7 +35,8 @@ function searchCountries(e) {
         } else if (resLen === 1) {
           // console.log(resLen);
           // console.log(res);
-          countryRender(res);
+          console.log(countryRender);
+          // countryRender(res);
         } else if (resLen === 0) {
           refs.countryList.innerHTML = '';
           refs.countryInfo.innerHTML = '';
