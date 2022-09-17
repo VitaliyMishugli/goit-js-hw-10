@@ -80,6 +80,7 @@ function countryRender(data) {
 }
 
 function countriesListRender(data) {
+  console.log("Запуск countries");
   refs.countryList.innerHTML = '';
   refs.countryInfo.innerHTML = '';
    let countries = data;
