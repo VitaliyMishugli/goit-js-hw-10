@@ -33,6 +33,8 @@ function searchCountries(e) {
         } else if (resLen <= 10 && resLen >= 2) {
           countriesListRender(res);
         } else if (resLen === 1) {
+          console.log(resLen);
+          console.log(res);
           countryRender(res);
         } else if (resLen === 0) {
           refs.countryList.innerHTML = '';
@@ -58,6 +60,7 @@ function countryRender(data) {
   refs.countryList.innerHTML = '';
   refs.countryInfo.innerHTML = '';
   let info = data[0];
+  console.log(info);
   const languages = info.languages;
   let langStr = ``;
 
