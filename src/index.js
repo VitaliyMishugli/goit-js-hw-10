@@ -12,7 +12,7 @@ function qwe(data) {
   // refs.countryList.innerHTML = '';
   // refs.countryInfo.innerHTML = '';
   // let info = data[0];
-  console.log(data[0]);
+  console.log(data[0].capital);
   // const languages = info.languages;
   // let langStr = ``;
 
