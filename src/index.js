@@ -41,6 +41,7 @@ function searchCountries(e) {
           refs.countryList.innerHTML = '';
           refs.countryInfo.innerHTML = '';
         }
+        oneCountryRender(res);
       })
       .catch(err => {
          refs.countryList.innerHTML = '';
@@ -80,7 +81,7 @@ function oneCountryRender(data) {
   console.log("Розмітка зроблена");
 }
 
-oneCountryRender(data);
+// oneCountryRender(data);
 
 function countriesListRender(data) {
   console.log("Запуск countries");
