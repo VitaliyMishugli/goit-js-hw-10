@@ -11,8 +11,8 @@ function qwe(data) {
   console.log(data);
   // refs.countryList.innerHTML = '';
   // refs.countryInfo.innerHTML = '';
-  // let info = data[0];
-  // console.log(info);
+  let info = data[0];
+  console.log(info);
   // const languages = info.languages;
   // let langStr = ``;
 
