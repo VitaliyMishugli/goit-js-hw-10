@@ -6,19 +6,16 @@ import Notiflix from 'notiflix';
 
 const DEBOUNCE_DELAY = 300;
 
-// function qwe(data) {
-//   console.log(data);
-// }
-
-function oneCountryRender(data) {
-  refs.countryList.innerHTML = '';
+function qwe(data) {
+  console.log(data);
+refs.countryList.innerHTML = '';
   refs.countryInfo.innerHTML = '';
   let info = data[0];
   // console.log(info);
   const languages = info.languages;
   let langStr = ``;
 
-  for (key in languages) {
+  for (key in languages){
     langStr += `${languages[key]}, `;
   }
 
@@ -30,8 +27,10 @@ function oneCountryRender(data) {
 
   console.log(string);
 
-  console.log('Розмітка зроблена');
+  console.log("Розмітка зроблена");
 }
+
+
 
 
 const refs = {
@@ -61,12 +60,12 @@ function searchCountries(e) {
         } else if (resLen <= 10 && resLen >= 2) {
           countriesListRender(res);
         } else if (resLen === 1) {
-          // qwe(res);
+          qwe(res);
           // ===========
           // console.log(resLen);
           // console.log(res);
           // console.log(countryRender);   
-          oneCountryRender(res);
+          // oneCountryRender(res);
         } else if (resLen === 0) {
           refs.countryList.innerHTML = '';
           refs.countryInfo.innerHTML = '';
