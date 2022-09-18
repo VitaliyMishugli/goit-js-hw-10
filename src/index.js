@@ -6,6 +6,10 @@ import Notiflix from 'notiflix';
 
 const DEBOUNCE_DELAY = 300;
 
+function qwe(data) {
+  console.log(data);
+}
+
 const refs = {
   searchInput: document.querySelector('#search-box'),
   countryList: document.querySelector('.country-list'),
@@ -33,15 +37,19 @@ function searchCountries(e) {
         } else if (resLen <= 10 && resLen >= 2) {
           countriesListRender(res);
         } else if (resLen === 1) {
+          qwe(res);
+          // ===========
           // console.log(resLen);
           // console.log(res);
-          console.log(countryRender);   
+          // console.log(countryRender);   
           // oneCountryRender(res);
         } else if (resLen === 0) {
           refs.countryList.innerHTML = '';
           refs.countryInfo.innerHTML = '';
         }
-        oneCountryRender(res);
+        // =====
+        // oneCountryRender(res);
+        // =====
       })
       .catch(err => {
          refs.countryList.innerHTML = '';
@@ -95,3 +103,5 @@ function countriesListRender(data) {
      .join('');
    refs.countryList.innerHTML = markUp;
 }
+
+
