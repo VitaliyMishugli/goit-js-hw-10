@@ -31,12 +31,12 @@ function searchCountries(e) {
           );
           refs.countryList.innerHTML = '';
         } else if (resLen <= 10 && resLen >= 2) {
-          // countriesListRender(res);
+          countriesListRender(res);
         } else if (resLen === 1) {
           // console.log(resLen);
           // console.log(res);
           console.log(countryRender);   
-          oneCountryRender(res);
+          // oneCountryRender(res);
         } else if (resLen === 0) {
           refs.countryList.innerHTML = '';
           refs.countryInfo.innerHTML = '';
