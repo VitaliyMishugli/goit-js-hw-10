@@ -28,7 +28,7 @@ function qwe(data) {
 
   // console.log(string);
 
-  // refs.countryInfo.innerHTML = ;
+  refs.countryInfo.innerHTML = "Функція працює";
 
   // // console.log(string);
 
