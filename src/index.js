@@ -57,7 +57,7 @@ function searchCountries(e) {
           refs.countryList.innerHTML = '';
         } else if (resLen <= 10 && resLen >= 2) {
           countriesListRender(res);
-        } else if (resLen === 1) {
+        } else if (resLen == 1) {
           qwe(res);
           // console.log(resLen);
           // console.log(res);
