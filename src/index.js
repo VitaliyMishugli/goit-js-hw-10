@@ -20,7 +20,7 @@ function qwe(data) {
   
   console.log(refs.countryInfo);
   let info = data[0];
-  refs.countryInfo.innerHTML = `<div><img src="${info.flags.svg}" width="50"/><h1>${info.name.official}</h1></div><div><h3>Capital: </h3><p>${info.capital[0]}</p></div><div><h3>Population: </h3><p>${info.population}</p></div>`;
+  refs.countryInfo.innerHTML = `<div><img src="${info.flags.svg}" width="50"/><h1>${info.name.official}</h1></div><div><h3>Capital: </h3><p>${info.capital[0]}</p></div><div><h3>Population: </h3><p>${info.population}</p></div><div><h3>Languages: </h3><p>${info.languages}</p></div>`;
   console.log(info);
   console.log(info.flags.svg);
   console.log(info.name.official);
