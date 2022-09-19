@@ -7,29 +7,29 @@ import Notiflix from 'notiflix';
 const DEBOUNCE_DELAY = 300;
 
 
-// function qwe(data) {
-//   // console.log(data);
-//   refs.countryList.innerHTML = '';
-//   refs.countryInfo.innerHTML = '';
-//   // let info = data[0];
-//   console.log(data[0].capital);
-//   const languages = info.languages;
-//   let langStr = ``;
+function qwe(data) {
+  console.log(data);
+  // refs.countryList.innerHTML = '';
+  // refs.countryInfo.innerHTML = '';
+  // // let info = data[0];
+  // console.log(data[0].capital);
+  // const languages = info.languages;
+  // let langStr = ``;
 
-//   for (key in languages) {
-//     langStr += `${languages[key]}, `;
-//   }
+  // for (key in languages) {
+  //   langStr += `${languages[key]}, `;
+  // }
 
-//   let string = `<div><img src="${info.flags.svg}" width="50"/><h1>${info.name.official}</h1></div><div><h3>Capital: </h3><p>${info.capital[0]}</p></div><div><h3>Population: </h3><p>${info.population}</p></div><div><h3>Languages: </h3><p>${langStr}</p></div>`;
+  // let string = `<div><img src="${info.flags.svg}" width="50"/><h1>${info.name.official}</h1></div><div><h3>Capital: </h3><p>${info.capital[0]}</p></div><div><h3>Population: </h3><p>${info.population}</p></div><div><h3>Languages: </h3><p>${langStr}</p></div>`;
 
-//   // console.log(string);
+  // // console.log(string);
 
-//   refs.countryInfo.innerHTML = string;
+  // refs.countryInfo.innerHTML = string;
 
-//   // console.log(string);
+  // // console.log(string);
 
-//   // console.log('Розмітка зроблена');
-// }
+  // // console.log('Розмітка зроблена');
+}
 
 const refs = {
   searchInput: document.querySelector('#search-box'),
@@ -58,7 +58,7 @@ function searchCountries(e) {
         } else if (resLen <= 10 && resLen >= 2) {
           countriesListRender(res);
         } else if (resLen === 1) {
-          // qwe(res);
+          qwe(res);
           // console.log(resLen);
           // console.log(res);
           // console.log(countryRender);   
@@ -83,28 +83,28 @@ function searchCountries(e) {
   }
 }
 
-function oneCountryRender(data) {
-  refs.countryList.innerHTML = '';
-  refs.countryInfo.innerHTML = '';
-  let info = data[0];
-  // console.log(info);
-  const languages = info.languages;
-  let langStr = ``;
+// function oneCountryRender(data) {
+//   refs.countryList.innerHTML = '';
+//   refs.countryInfo.innerHTML = '';
+//   let info = data[0];
+//   // console.log(info);
+//   const languages = info.languages;
+//   let langStr = ``;
 
-  for (key in languages){
-    langStr += `${languages[key]}, `;
-  }
+//   for (key in languages){
+//     langStr += `${languages[key]}, `;
+//   }
 
-  let string = `<div><img src="${info.flags.svg}" width="50"/><h1>${info.name.official}</h1></div><div><h3>Capital: </h3><p>${info.capital[0]}</p></div><div><h3>Population: </h3><p>${info.population}</p></div><div><h3>Languages: </h3><p>${langStr}</p></div>`;
+//   let string = `<div><img src="${info.flags.svg}" width="50"/><h1>${info.name.official}</h1></div><div><h3>Capital: </h3><p>${info.capital[0]}</p></div><div><h3>Population: </h3><p>${info.population}</p></div><div><h3>Languages: </h3><p>${langStr}</p></div>`;
 
-  console.log(string);
+//   console.log(string);
 
-  refs.countryInfo.innerHTML = string;
+//   refs.countryInfo.innerHTML = string;
 
-  console.log(string);
+//   console.log(string);
 
-  console.log("Розмітка зроблена");
-}
+//   console.log("Розмітка зроблена");
+// }
 
 function countriesListRender(data) {
   console.log("Запуск countries");
