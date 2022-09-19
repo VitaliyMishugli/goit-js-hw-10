@@ -14,8 +14,8 @@ const refs = {
 
 function qwe(data) {
   console.log(data);
-  // refs.countryList.innerHTML = '';
-  // refs.countryInfo.innerHTML = '';
+  refs.countryList.innerHTML = '';
+  refs.countryInfo.innerHTML = '';
 
   console.log(refs.countryInfo);
   let info = data[0];
