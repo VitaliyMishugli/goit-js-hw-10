@@ -14,8 +14,8 @@ const refs = {
 
 function qwe(data) {
   console.log(data);
-  refs.countryList.innerHTML = '';
-  refs.countryInfo.innerHTML = '';
+  // refs.countryList.innerHTML = '';
+  refs.countryInfo.innerHTML = 'Hello world';
   let info = data[0];
   console.log(info);
   console.log(info.flags.svg);
@@ -33,7 +33,7 @@ function qwe(data) {
 
   // console.log(string);
 
-  refs.countryInfo.innerHTML = "Функція працює";
+  // refs.countryInfo.innerHTML = string;
 
   // // console.log(string);
 
