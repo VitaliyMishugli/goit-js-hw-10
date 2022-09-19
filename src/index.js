@@ -13,10 +13,10 @@ function qwe(data) {
   // refs.countryInfo.innerHTML = '';
   let info = data[0];
   console.log(info);
-  console.log(info.flags.svg);
-  console.log(info.name.official);
-  console.log(info.capital[0]);
-  console.log(info.population);
+  // console.log(info.flags.svg);
+  // console.log(info.name.official);
+  // console.log(info.capital[0]);
+  // console.log(info.population);
   // const languages = info.languages;
   // let langStr = ``;
 
@@ -24,9 +24,9 @@ function qwe(data) {
   //   langStr += `${languages[key]}, `;
   // }
 
-  // let string = `<div><img src="${info.flags.svg}" width="50"/><h1>${info.name.official}</h1></div><div><h3>Capital: </h3><p>${info.capital[0]}</p></div><div><h3>Population: </h3><p>${info.population}</p></div><div><h3>Languages: </h3><p>${langStr}</p></div>`;
+  let string = `<div><img src="${info.flags.svg}" width="50"/><h1>${info.name.official}</h1></div><div><h3>Capital: </h3><p>${info.capital[0]}</p></div><div><h3>Population: </h3><p>${info.population}</p></div><div><h3>Languages: </h3><p>${langStr}</p></div>`;
 
-  // // console.log(string);
+  console.log(string);
 
   // refs.countryInfo.innerHTML = string;
 
