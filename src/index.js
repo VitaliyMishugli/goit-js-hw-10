@@ -11,24 +11,28 @@ function qwe(data) {
   console.log(data);
   // refs.countryList.innerHTML = '';
   // refs.countryInfo.innerHTML = '';
-  // // let info = data[0];
-  // console.log(data[0].capital);
-  // const languages = info.languages;
-  // let langStr = ``;
+  let info = data[0];
+  // console.log(info);
+  // console.log(info.flags.svg);
+  // console.log(info.name.official);
+  // console.log(info.capital[0]);
+  // console.log(info.population);
+  const languages = info.languages;
+  let langStr = ``;
 
-  // for (key in languages) {
-  //   langStr += `${languages[key]}, `;
-  // }
+  for (key in languages) {
+    langStr += `${languages[key]}, `;
+  }
 
-  // let string = `<div><img src="${info.flags.svg}" width="50"/><h1>${info.name.official}</h1></div><div><h3>Capital: </h3><p>${info.capital[0]}</p></div><div><h3>Population: </h3><p>${info.population}</p></div><div><h3>Languages: </h3><p>${langStr}</p></div>`;
+  let string = `<div><img src="${info.flags.svg}" width="50"/><h1>${info.name.official}</h1></div><div><h3>Capital: </h3><p>${info.capital[0]}</p></div><div><h3>Population: </h3><p>${info.population}</p></div><div><h3>Languages: </h3><p>${langStr}</p></div>`;
+
+  // console.log(string);
+
+  refs.countryInfo.innerHTML = string;
 
   // // console.log(string);
 
-  // refs.countryInfo.innerHTML = string;
-
-  // // console.log(string);
-
-  // // console.log('Розмітка зроблена');
+  console.log('Розмітка зроблена');
 }
 
 const refs = {
@@ -57,18 +61,18 @@ function searchCountries(e) {
           refs.countryList.innerHTML = '';
         } else if (resLen <= 10 && resLen >= 2) {
           countriesListRender(res);
-        } else if (resLen == 1) {
+        } else if (resLen === 1) {
           qwe(res);
           // console.log(resLen);
           // console.log(res);
           // console.log(countryRender);   
-          oneCountryRender(res);
+          // oneCountryRender(res);
         } else if (resLen === 0) {
           refs.countryList.innerHTML = '';
           refs.countryInfo.innerHTML = '';
         }
       })
-      .catch(err => {
+      .catch(() => {
          refs.countryList.innerHTML = '';
          refs.countryInfo.innerHTML = '';
         Notiflix.Notify.failure(`Oops, there is no country with that name.`);
