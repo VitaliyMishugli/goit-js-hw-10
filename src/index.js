@@ -15,9 +15,12 @@ const refs = {
 function qwe(data) {
   console.log(data);
   // refs.countryList.innerHTML = '';
-  refs.countryInfo.innerHTML = 'hello';
+  // refs.countryInfo.innerHTML = '';
+
+  
   console.log(refs.countryInfo);
   let info = data[0];
+  refs.countryInfo.innerHTML = `<div><img src="${info.flags.svg}" width="50"/><h1>${info.name.official}</h1></div>`;
   console.log(info);
   console.log(info.flags.svg);
   console.log(info.name.official);
