@@ -13,7 +13,6 @@ const refs = {
 };
 
 function oneCountryRender(data) {
-  console.log(data);
   refs.countryList.innerHTML = '';
   refs.countryInfo.innerHTML = '';
 
