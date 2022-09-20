@@ -12,44 +12,24 @@ const refs = {
   countryInfo: document.querySelector('.country-info'),
 };
 
-function qwe(data) {
+function oneCountryRender(data) {
   console.log(data);
   refs.countryList.innerHTML = '';
   refs.countryInfo.innerHTML = '';
 
-  console.log(refs.countryInfo);
   let info = data[0];
-  // const languages = info.languages;
-  // let langStr = ``;
-
-  // for (key in languages) {
-  //   langStr += `${languages[key]}, `;
-  // }
-  refs.countryInfo.innerHTML = `<div><img src="${info.flags.svg}" width="50"/><h1>${info.name.official}</h1></div><div><h3>Capital: </h3><p>${info.capital[0]}</p></div><div><h3>Population: </h3><p>${info.population}</p></div><div><h3>Languages: </h3><p>${Object.values(info.languages)}</p></div>`;
-  console.log(info);
-  console.log(info.flags.svg);
-  console.log(info.name.official);
-  console.log(info.capital[0]);
-  console.log(info.population);
-  // const languages = info.languages;
-  // let langStr = ``;
-
-  // for (key in languages) {
-  //   langStr += `${languages[key]}, `;
-  // }
-
-  // let string = `<div><img src="${info.flags.svg}" width="50"/><h1>${info.name.official}</h1></div><div><h3>Capital: </h3><p>${info.capital[0]}</p></div><div><h3>Population: </h3><p>${info.population}</p></div><div><h3>Languages: </h3><p>${langStr}</p></div>`;
-
-  // console.log(string);
-
-  // refs.countryInfo.innerHTML = string;
-
-  // // console.log(string);
-
-  // console.log('Розмітка зроблена');
+  refs.countryInfo.innerHTML = `<div><img src="${
+    info.flags.svg
+  }" width="50"/><h1>${
+    info.name.official
+  }</h1></div><div><h3>Capital: </h3><p>${
+    info.capital[0]
+  }</p></div><div><h3>Population: </h3><p>${
+    info.population
+  }</p></div><div><h3>Languages: </h3><p>${Object.values(
+    info.languages
+  )}</p></div>`;
 }
-
-
 
 refs.searchInput.addEventListener(
   'input',
@@ -72,11 +52,7 @@ function searchCountries(e) {
         } else if (resLen <= 10 && resLen >= 2) {
           countriesListRender(res);
         } else if (resLen === 1) {
-          qwe(res);
-          // console.log(resLen);
-          // console.log(res);
-          // console.log(countryRender);   
-          // oneCountryRender(res);
+          oneCountryRender(res);
         } else if (resLen === 0) {
           refs.countryList.innerHTML = '';
           refs.countryInfo.innerHTML = '';
@@ -97,31 +73,7 @@ function searchCountries(e) {
   }
 }
 
-// function oneCountryRender(data) {
-//   refs.countryList.innerHTML = '';
-//   refs.countryInfo.innerHTML = '';
-//   let info = data[0];
-//   // console.log(info);
-//   const languages = info.languages;
-//   let langStr = ``;
-
-//   for (key in languages){
-//     langStr += `${languages[key]}, `;
-//   }
-
-//   let string = `<div><img src="${info.flags.svg}" width="50"/><h1>${info.name.official}</h1></div><div><h3>Capital: </h3><p>${info.capital[0]}</p></div><div><h3>Population: </h3><p>${info.population}</p></div><div><h3>Languages: </h3><p>${langStr}</p></div>`;
-
-//   console.log(string);
-
-//   refs.countryInfo.innerHTML = string;
-
-//   console.log(string);
-
-//   console.log("Розмітка зроблена");
-// }
-
 function countriesListRender(data) {
-  console.log("Запуск countries");
   refs.countryList.innerHTML = '';
   refs.countryInfo.innerHTML = '';
    let countries = data;
